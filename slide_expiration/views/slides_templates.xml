@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+        <template id="slide_expiration.course_ended_modal" name="Course Ended Modal">
+            <div class="modal fade" id="missing_requirement_modal" role="dialog">
+                <div class="modal-dialog bh_modal_dialog">
+                    <div class="modal-content bh_modal-box">
+                        <div class="bh_text_popup pt-4">
+                            <p><b>This Course has ended</b>
+                                <br/>
+                                Hence you cannot continue.
+                                <br/>
+                                before learning this slide.</p>
+                        </div>
+                        <button type="button" class="btn btn-primary px-5 mb-2" data-bs-dismiss="modal">Understood</button>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </data>
+</odoo>
