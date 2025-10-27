@@ -1,0 +1,29 @@
+<odoo>
+  <data>
+
+    <record id="view_slide_channel_mail_form" model="ir.ui.view">
+      <field name="name">slide.channel.mail.view.form</field>
+      <field name="model">slide.channel</field>
+      <field name="inherit_id" ref="website_slides.view_slide_channel_form"/>
+      <field name="arch" type="xml">
+        <page name="description" position="after">
+          <page string="Communication" name="slide_communication">
+            <field name="slide_mail_ids">
+              <list string="Communication" editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="template_ref" options="{'no_quick_create': True}" />
+                <field name="interval_nbr" readonly="interval_unit == 'now'"/>
+                <field name="interval_unit"/>
+                <field name="interval_type"/>
+                <field name="scheduled_date" groups="base.group_no_one"/>
+                <field name="mail_count_done"/>
+                <field name="mail_state" widget="event_icon_selection" string=" " nolabel="1" options="{'sent': 'fa fa-check', 'scheduled': 'fa fa-hourglass-half', 'running': 'fa fa-cogs'}"/>
+              </list>
+            </field>
+          </page>
+        </page>
+      </field>
+    </record>
+
+  </data>
+</odoo>
