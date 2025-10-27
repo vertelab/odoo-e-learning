@@ -31,16 +31,11 @@
     'description': """
         Long description of module's purpose
     """,
-    #'sequence': 1,
     'author': 'Vertel AB',
     'website': 'https://vertel.se/apps/odoo-',
-    'images': ['static/description/banner.png'], # 560x280
+    'images': ['static/description/banner.png'],
     'license': 'AGPL-3',
-    'depends': ["website_slides"],
-     #"external_dependencies": {
-     #   "bin": ["openssl",], 
-     #   "python": ["acme_tiny", "IPy",],
-     #},
+    'depends': ["website_slides_expiration"],
     'data': [
         "security/ir.model.access.csv",
         "views/slide_channel_views.xml",
@@ -49,5 +44,4 @@
     'application': False,
     'installable': True,    
     'auto_install': False,
-    #"post_init_hook": "post_init_hook",
 }

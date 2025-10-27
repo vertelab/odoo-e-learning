@@ -29,8 +29,8 @@ class SlideMail(models.Model):
         string='Unit', default='hours', required=True)
     interval_type = fields.Selection([
         ('after_sub', 'After each registration'),
-        ('before_event', 'Before the event'),
-        ('after_event', 'After the event')],
+        ('before_event', 'Reminder'),
+        ('after_event', 'Completion')],
         string='Trigger ', default="before_event", required=True)
     mail_done = fields.Boolean("Sent", copy=False, readonly=True)
     partner_id = fields.Many2one(comodel_name="res.partner")
