@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <odoo>
     <data>
-        <template id="slide_expiration.course_ended_modal" name="Course Ended Modal">
+        <template id="website_slides_expiration.course_ended_modal" name="Course Ended Modal">
             <div class="modal fade" id="missing_requirement_modal" role="dialog">
                 <div class="modal-dialog bh_modal_dialog">
                     <div class="modal-content bh_modal-box">

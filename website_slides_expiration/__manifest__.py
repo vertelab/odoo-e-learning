@@ -22,7 +22,7 @@
 # https://www.odoo.com/documentation/14.0/reference/module.html
 #
 {
-    'name': 'Slide: Expiration',
+    'name': 'eLearning: expiration',
     'version': '1.0',
     'summary': """
         This module makes it impossible to conitinue a slide when the course is expired.     
@@ -43,7 +43,7 @@
     ],
     'assets': {
         'web.assets_frontend': [
-            'slide_expiration/static/src/js/slides_course_fullscreen_player.js',
+            'website_slides_expiration/static/src/js/slides_course_fullscreen_player.js',
         ]
     },
     'application': False,
