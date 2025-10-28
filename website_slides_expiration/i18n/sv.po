@@ -1,0 +1,50 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* website_slides_expiration
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0-20251022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-28 13:01+0000\n"
+"PO-Revision-Date: 2025-10-28 14:04+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sv_SE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#. module: website_slides_expiration
+#: model:ir.model,name:website_slides_expiration.model_slide_channel
+msgid "Course"
+msgstr "Kurs"
+
+#. module: website_slides_expiration
+#. odoo-python
+#: code:addons/website_slides_expiration/controllers/main.py:0
+msgid "Course not found"
+msgstr "Kurs kan inte hittas"
+
+#. module: website_slides_expiration
+#: model:ir.model.fields,field_description:website_slides_expiration.field_slide_channel__end_date
+msgid "End Date"
+msgstr "Slutdatum"
+
+#. module: website_slides_expiration
+#: model:ir.model,name:website_slides_expiration.model_slide_slide
+msgid "Slides"
+msgstr "Bildspel"
+
+#. module: website_slides_expiration
+#: model:ir.model.fields,field_description:website_slides_expiration.field_slide_channel__start_date
+msgid "Start Date"
+msgstr "Startdatum"
+
+#. module: website_slides_expiration
+#. odoo-python
+#: code:addons/website_slides_expiration/models/slide_channel.py:0
+msgid "This course ended on %s and is no longer accessible"
+msgstr "Denna kursen slutade den %s och är inte längre tillgänglig"
