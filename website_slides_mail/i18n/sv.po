@@ -1,0 +1,189 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* website_slides_mail
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0-20251022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-28 13:05+0000\n"
+"PO-Revision-Date: 2025-10-28 14:12+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sv_SE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#. module: website_slides_mail
+#: model:ir.model.fields,field_description:website_slides_mail.field_slide_mail__mail_count_done
+msgid "# Sent"
+msgstr "# Skickat"
+
+#. module: website_slides_mail
+#: model:ir.model.fields.selection,name:website_slides_mail.selection__slide_mail__interval_type__after_sub
+msgid "After each registration"
+msgstr "Efter varje registrering"
+
+#. module: website_slides_mail
+#: model_terms:ir.ui.view,arch_db:website_slides_mail.view_slide_channel_mail_form
+msgid "Communication"
+msgstr "Kommunikation"
+
+#. module: website_slides_mail
+#: model:ir.model.fields.selection,name:website_slides_mail.selection__slide_mail__interval_type__after_event
+msgid "Completion"
+msgstr "Slutfört"
+
+#. module: website_slides_mail
+#: model:ir.model,name:website_slides_mail.model_slide_channel
+msgid "Course"
+msgstr "Kurs"
+
+#. module: website_slides_mail
+#: model:ir.model.fields,field_description:website_slides_mail.field_slide_mail__create_uid
+msgid "Created by"
+msgstr "Skapad av"
+
+#. module: website_slides_mail
+#: model:ir.model.fields,field_description:website_slides_mail.field_slide_mail__create_date
+msgid "Created on"
+msgstr "Skapad den"
+
+#. module: website_slides_mail
+#: model:ir.model.fields.selection,name:website_slides_mail.selection__slide_mail__interval_unit__days
+msgid "Days"
+msgstr "Dagar"
+
+#. module: website_slides_mail
+#: model:ir.model.fields,field_description:website_slides_mail.field_slide_mail__display_name
+msgid "Display Name"
+msgstr "Visningsnamn"
+
+#. module: website_slides_mail
+#: model:ir.model.fields,field_description:website_slides_mail.field_slide_mail__sequence
+msgid "Display order"
+msgstr "Visningsordning"
+
+#. module: website_slides_mail
+#: model:ir.model,name:website_slides_mail.model_slide_mail
+msgid "E-Learning Automated Mailing"
+msgstr "E-Learning automatiserat utskick"
+
+#. module: website_slides_mail
+#: model:ir.model.fields,field_description:website_slides_mail.field_slide_mail__mail_state
+msgid "Global communication Status"
+msgstr "Global kommunikationsstatus"
+
+#. module: website_slides_mail
+#: model:ir.model.fields.selection,name:website_slides_mail.selection__slide_mail__interval_unit__hours
+msgid "Hours"
+msgstr "Timmar"
+
+#. module: website_slides_mail
+#: model:ir.model.fields,field_description:website_slides_mail.field_slide_mail__id
+msgid "ID"
+msgstr "ID"
+
+#. module: website_slides_mail
+#: model:ir.model.fields.selection,name:website_slides_mail.selection__slide_mail__interval_unit__now
+msgid "Immediately"
+msgstr "Omedelbart"
+
+#. module: website_slides_mail
+#: model:ir.model.fields,field_description:website_slides_mail.field_slide_mail__interval_nbr
+msgid "Interval"
+msgstr "Intervall"
+
+#. module: website_slides_mail
+#: model:ir.model.fields,field_description:website_slides_mail.field_slide_mail__write_uid
+msgid "Last Updated by"
+msgstr "Senast uppdaterad av"
+
+#. module: website_slides_mail
+#: model:ir.model.fields,field_description:website_slides_mail.field_slide_mail__write_date
+msgid "Last Updated on"
+msgstr "Senast uppdaterad den"
+
+#. module: website_slides_mail
+#: model:ir.model.fields.selection,name:website_slides_mail.selection__slide_mail__template_ref__mail_template
+msgid "Mail"
+msgstr "Epost"
+
+#. module: website_slides_mail
+#: model:ir.model.fields.selection,name:website_slides_mail.selection__slide_mail__interval_unit__months
+msgid "Months"
+msgstr "Månader"
+
+#. module: website_slides_mail
+#: model:ir.model.fields,field_description:website_slides_mail.field_slide_mail__partner_id
+msgid "Partner"
+msgstr "Partner"
+
+#. module: website_slides_mail
+#: model:ir.model.fields.selection,name:website_slides_mail.selection__slide_mail__interval_type__before_event
+msgid "Reminder"
+msgstr "Påminnelse"
+
+#. module: website_slides_mail
+#: model:ir.model.fields.selection,name:website_slides_mail.selection__slide_mail__mail_state__running
+msgid "Running"
+msgstr "Drift"
+
+#. module: website_slides_mail
+#: model:ir.model.fields,field_description:website_slides_mail.field_slide_mail__scheduled_date
+msgid "Schedule Date"
+msgstr "Schemalagt datum"
+
+#. module: website_slides_mail
+#: model:ir.model.fields.selection,name:website_slides_mail.selection__slide_mail__mail_state__scheduled
+msgid "Scheduled"
+msgstr "Schema"
+
+#. module: website_slides_mail
+#: model:ir.model.fields,field_description:website_slides_mail.field_slide_mail__mail_done
+#: model:ir.model.fields.selection,name:website_slides_mail.selection__slide_mail__mail_state__sent
+msgid "Sent"
+msgstr "Skickat"
+
+#. module: website_slides_mail
+#: model:ir.model.fields,field_description:website_slides_mail.field_slide_mail__slide_channel_id
+msgid "Slide Channel"
+msgstr "Bildkanal"
+
+#. module: website_slides_mail
+#: model:ir.model.fields,field_description:website_slides_mail.field_slide_channel__slide_mail_ids
+msgid "Slide Mail"
+msgstr "Bildpost"
+
+#. module: website_slides_mail
+#: model:ir.model.fields,field_description:website_slides_mail.field_slide_mail__template_ref
+msgid "Template"
+msgstr "Mall"
+
+#. module: website_slides_mail
+#: model:ir.model.fields,field_description:website_slides_mail.field_slide_mail__tmp_end_date
+msgid "Tmp End Date"
+msgstr "Tillfälligt slutdatum"
+
+#. module: website_slides_mail
+#: model:ir.model.fields,field_description:website_slides_mail.field_slide_mail__tmp_start_date
+msgid "Tmp Start Date"
+msgstr "Tillfälligt startdatum"
+
+#. module: website_slides_mail
+#: model:ir.model.fields,field_description:website_slides_mail.field_slide_mail__interval_type
+msgid "Trigger "
+msgstr "Utlösare "
+
+#. module: website_slides_mail
+#: model:ir.model.fields,field_description:website_slides_mail.field_slide_mail__interval_unit
+msgid "Unit"
+msgstr "Enhet"
+
+#. module: website_slides_mail
+#: model:ir.model.fields.selection,name:website_slides_mail.selection__slide_mail__interval_unit__weeks
+msgid "Weeks"
+msgstr "Veckor"
