@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_elearning_export_import_form" model="ir.ui.view">
+        <field name="name">elearning.export.import.form</field>
+        <field name="model">elearning.export.import</field>
+        <field name="arch" type="xml">
+            <form string="Export/Import eLearning Courses">
+                <group>
+                    <group>
+                        <field name="export_format"/>
+                        <field name="course_ids" widget="many2many_tags"/>
+                    </group>
+                    <group>
+                        <field name="data_file" filename="filename"/>
+                        <field name="filename" invisible="1"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="action_export" string="Export" type="object" class="btn-primary"/>
+                    <button name="action_import" string="Import" type="object" class="btn-secondary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_elearning_export_import" model="ir.actions.act_window">
+        <field name="name">Export/Import Courses</field>
+        <field name="res_model">elearning.export.import</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_elearning_export_import"
+              name="Export/Import Courses"
+              parent="website_slides.menu_courses_root"
+              action="action_elearning_export_import"
+              sequence="20"/>
+</odoo>
