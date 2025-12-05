@@ -5,21 +5,48 @@
         <field name="model">elearning.export.import</field>
         <field name="arch" type="xml">
             <form string="Export/Import eLearning Courses">
-                <group>
-                    <group>
-                        <field name="export_format"/>
-                        <field name="course_ids" widget="many2many_tags"/>
-                    </group>
-                    <group>
-                        <field name="data_file" filename="filename"/>
-                        <field name="filename" invisible="1"/>
-                    </group>
-                </group>
-                <footer>
-                    <button name="action_export" string="Export" type="object" class="btn-primary"/>
-                    <button name="action_import" string="Import" type="object" class="btn-secondary"/>
-                    <button string="Cancel" class="btn-secondary" special="cancel"/>
-                </footer>
+                <notebook>
+                    <page string="Export Courses">
+                        <group>
+                            <group>
+                                <field name="export_format" 
+                                       options="{'no_create': True}"/>
+                                <field name="course_ids" 
+                                       widget="many2many_tags"
+                                       placeholder="Select courses to export"/>
+                            </group>
+                        </group>
+                        <footer>
+                            <button name="action_export" 
+                                    string="Export Selected Courses" 
+                                    type="object" 
+                                    class="btn-primary me-2"/>
+                            <button string="Cancel" 
+                                    class="btn-secondary" 
+                                    special="cancel"/>
+                        </footer>
+                    </page>
+                    <page string="Import Courses">
+                        <group>
+                            <group>
+                                <field name="data_file" 
+                                       filename="filename"
+                                       placeholder="Upload JSON/XML file"/>
+                                <field name="filename" invisible="1"/>
+                            </group>
+                        </group>
+                        <footer>
+                            <button name="action_import" 
+                                    string="Import Courses" 
+                                    type="object" 
+                                    class="btn-primary me-2"
+                                    invisible="not data_file"/>
+                            <button string="Cancel" 
+                                    class="btn-secondary" 
+                                    special="cancel"/>
+                        </footer>
+                    </page>
+                </notebook>
             </form>
         </field>
     </record>
@@ -33,7 +60,7 @@
 
     <menuitem id="menu_elearning_export_import"
               name="Export/Import Courses"
-              parent="website_slides.menu_courses_root"
+              parent="website_slides.website_slides_menu_configuration"
               action="action_elearning_export_import"
               sequence="20"/>
 </odoo>
