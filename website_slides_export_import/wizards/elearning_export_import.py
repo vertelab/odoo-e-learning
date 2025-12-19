@@ -48,6 +48,7 @@ class ElearningExportImport(models.TransientModel):
             'name': True,
             'description': True,
             'channel_type': True,
+            'image_1920': True,
 
             # Many2many - will create if missing
             # 'tag_ids': ['name'], # Many2many
@@ -55,9 +56,11 @@ class ElearningExportImport(models.TransientModel):
             # One2many - export with nested fields
             'slide_ids': [
                 'name',
+                'is_category',
                 'slide_category',
                 'sequence',
                 'slide_type',
+                'image_1920',
                 'url',
                 'html_content',
                 'description',
@@ -118,14 +121,18 @@ class ElearningExportImport(models.TransientModel):
         return pretty_xml
 
     def _export_field_value(self, parent_elem, field, field_value, record, field_config=None, parent_record=None):
-
-        if field.ttype == 'binary':
-            return
-
-        if field.ttype in ['boolean', 'char', 'text', 'float', 'integer', 'selection', 'html', 'monetary']:
+        if field.ttype in ['boolean', 'char', 'text', 'float', 'integer', 'selection', 'html', 'monetary', 'binary', 'image']:
             try:
                 field_elem = ET.SubElement(parent_elem, 'field', name=field.name)
-                field_elem.text = str(field_value) if field_value is not False else ''
+
+                if field.ttype in ['binary'] and field_value:
+                    text_value = str(field_value)
+                    if text_value.startswith("b'") and text_value.endswith("'"):
+                        text_value = text_value[2:-1]  # Strip b' and trailing '
+                    field_elem.text = text_value
+                else:
+                    field_elem.text = str(field_value) if field_value is not False else ''
+
             except Exception as e:
                 _logger.warning(f"Failed to export field {field.name}: {str(e)}")
 
@@ -329,6 +336,12 @@ class ElearningExportImport(models.TransientModel):
     def _parse_record_fields(self, record_elem):
         data = {}
 
+        # Get model name to check field types
+        model_name = record_elem.get('model')
+        ir_model = None
+        if model_name:
+            ir_model = self.env['ir.model'].search([('model', '=', model_name)], limit=1)
+
         for field_elem in record_elem.findall('field'):
             field_name = field_elem.get('name')
 
@@ -360,25 +373,37 @@ class ElearningExportImport(models.TransientModel):
                     # Simple field with text value
                     text_value = field_elem.text
 
-                    if text_value:
-                        # Try to infer type from content
-                        if text_value in ['True', 'False']:
-                            data[field_name] = text_value == 'True'
-                        elif text_value.replace('.', '', 1).replace('-', '', 1).isdigit():
-                            # Could be int or float
-                            if '.' in text_value:
-                                data[field_name] = float(text_value)
-                            else:
-                                data[field_name] = int(text_value)
+                    if not text_value:
+                        # Empty field - skip it
+                        continue
+
+                    # Check if this is a binary/image field
+                    is_binary = False
+                    if ir_model:
+                        field_obj = ir_model.field_id.filtered(lambda f: f.name == field_name)
+                        if field_obj and field_obj.ttype in ['binary']:
+                            is_binary = True
+
+                    # Binary fields - keep as base64 string (already encoded)
+                    if is_binary:
+                        data[field_name] = text_value
+                        continue
+
+                    # Try to infer type from content for other fields
+                    if text_value in ['True', 'False']:
+                        data[field_name] = text_value == 'True'
+                    elif text_value.replace('.', '', 1).replace('-', '', 1).isdigit():
+                        # Could be int or float
+                        if '.' in text_value:
+                            data[field_name] = float(text_value)
                         else:
-                            # String value
-                            data[field_name] = text_value
+                            data[field_name] = int(text_value)
                     else:
-                        # Empty field
-                        data[field_name] = False
+                        # String value
+                        data[field_name] = text_value
 
             except Exception as e:
-                _logger.warning(f"Failed to import field {field_name}: {str(e)}")
+                _logger.warning(f"Failed to import field {field_name}: {str(e)}", exc_info=True)
 
         return data
 
