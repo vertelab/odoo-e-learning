@@ -122,7 +122,7 @@ class ElearningExportImport(models.TransientModel):
 
     def _collect_attachments_from_courses(self):
         """
-        First pass: Extract and deduplicate images from all slides.
+        Extract and deduplicate images from all slides.
         Returns: (slide_attachments, modified_html_map)
         """
         slide_attachments = {}
