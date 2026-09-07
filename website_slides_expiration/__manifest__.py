@@ -31,7 +31,7 @@
     'description': """
         This module makes it impossible to conitinue a slide when the course is expired. 
     """,
-    'author': 'Vertel AB',
+    'author': 'Vertel Sverige AB',
     'website': 'https://vertel.se/apps/odoo-e-learning',
     'images': ['static/description/banner.png'], # 560x280
     'license': 'AGPL-3',
